@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/**
+ * featured-page-widget-admin.css - Stylesheet for the settings page.
+ *
+ * @package Featured Page Widget
+ * @subpackage includes
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 1.4
+ */
+
+.featured-page-settings-table {
+     height: 350px;
+     margin-bottom: 5px;
+}
+
+.submit {
+     margin: 0;
+     padding: 0;
+}
+
+label.featured-page-widget-post-type {
+     width: 125px;
+     float: left;
+     font-size: 12px;
+}
+label.featured-page-widget-hide-word {
+     width: 100px;
+     float: left;
+}
+
+ul#featured_page_widget_tabs {
+     border-bottom:1px solid #A2B6CB;
+     font-family:Verdana,Arial;
+     font-size:12px;
+     font-weight:bold;
+     list-style-type:none;
+     margin-bottom:12px;
+     padding-bottom:28px;
+     z-index:1;
+}
+
+#featured_page_widget_tabs li {
+     background-color: #EBEBEB;
+     border: 1px solid #A2B6CB;
+     float: left;
+     height: 25px;
+     margin: 2px 0px 0px 5px;
+}
+
+#featured_page_widget_tabs li a {
+     color: #666;
+     display: block;
+     float: right;
+     padding: 5px;
+     text-decoration: none;
+}
+
+#featured_page_widget_tabs li.save-tab {
+     background-color: #666;
+     font-weight: bold;
+}
+
+#featured_page_widget_tabs li.save-tab a {
+     color: #fff;
+}
+
+#featured_page_widget_tabs li.featured-page-widget-selected {
+     background-color: #A2B6CB;
+}
+
+#featured_page_widget_tabs li.featured-page-widget-selected a{
+     color: #fff;
+}

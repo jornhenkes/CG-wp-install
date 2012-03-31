@@ -1,0 +1,18 @@
+{
+    "text_upgrade_now" : "Upgrade Now",
+    "text_you" : "YOU",
+    "button_continue" : "Continue Anyway",
+    "button_close" : "Lukk",
+    "text_you_are_using" : "",
+    "message_failed" : "Visste du at du bruker en eldgammel utgave av Internet Explorer?",
+    "message_acceptable" : "Not bad. Try using our other recommendations.",
+    "message_recommended" : "Good choice. Stick with it.",
+    "message_description" : "Vi støtter ikke lenger Explorer 6. Nettstedet kommer til å vises feil, mye vil ikke fungere – og du får garantert en dårlig opplevelse. Vi anbefaler sterkt at du bruker en annen nettleser eller i hvert fall en nyere utgave av Internet Explorer. Noen av de mest populære nettleserne finnes under.",
+    "message_warning" : "Ved å lukke dette vinduet godtar du en slett opplevelse av dette nettstedet.",
+    "message_error" : "Sorry, something went wrong. We're fixing it.",
+    "status_loading" : "Loading...", 
+    "status_approved" : "Browser Approved.", 
+    "status_acceptable" : "Browser Acceptable.", 
+    "status_failed" : "Browser Failed.", 
+    "link_check" : "Check"
+}

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/**
+ * featured-page-widget.css: Stylesheet for widget.
+ *
+ * @package Featured Page Widget
+ * @subpackage includes
+ * @author GrandSlambert
+ * @copyright 2009-2011
+ * @access public
+ * @since 0.1
+*/
+
+.featured-post-widget {
+     clear: both;
+}
+
+.fpw-image-left {
+     float: left;
+     padding-right: 10px;
+     padding-bottom: 5px;
+}
+
+.fpw-image-right {
+     float: right;
+     padding-left: 10px;
+     padding-bottom: 5px;
+}
+
+h3.featured-post-title {
+     margin: 5px 0;
+     font-size: 16px;
+}
+
+div.featured-post-widget-border {
+     border: solid 1px #dadada;
+     margin-bottom: 8px;
+}
+
+div.featured-post-widget-border h3.featured-post-title {
+     padding: 0 5px;
+}
+
+div.featured-post-widget-border div.featured_post_content {
+     padding: 0 5px;
+}
+
+div.featured-post-widget-border div.featured_post_more_link {
+     padding: 0 5px;
+     margin: 0;
+     border-top: solid 1px #dadada;
+}

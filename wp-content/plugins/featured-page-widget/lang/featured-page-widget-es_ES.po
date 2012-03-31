@@ -1,0 +1,437 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fetured Page Widget 2.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/featured-page-widget\n"
+"POT-Creation-Date: 2011-03-02 23:51:18+00:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Shane Lambert <shane@grandslambert.com>\n"
+"Language-Team: GrandSlambert <shane@grandslambert.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. #-#-#-#-#  featured-page-widget.pot (Featured Page Widget 2.1)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: featured-page-widget.php:55
+msgid "Featured Page Widget"
+msgstr "Destacados widget página"
+
+#: featured-page-widget.php:58
+msgid "Feature a page on your sidebar. By GrandSlambert."
+msgstr "Cuentan con una página en la barra lateral. Por GrandSlambert."
+
+#: featured-page-widget.php:102
+msgid "Read More"
+msgstr "Leer más"
+
+#: featured-page-widget.php:179
+msgid " Settings"
+msgstr " Configuración"
+
+#: featured-page-widget.php:202
+msgid "Settings"
+msgstr "Configuración"
+
+#: includes/settings.php:26
+msgid "Content Settings"
+msgstr "Configuración del contenido"
+
+#: includes/settings.php:27
+msgid "Link Settings"
+msgstr "Configuración de Enlace"
+
+#: includes/settings.php:28
+msgid "Image Settings"
+msgstr "Ajustes de imagen"
+
+#: includes/settings.php:29
+#: includes/settings/administration.php:19
+msgid "Administration"
+msgstr "Administración"
+
+#: includes/settings.php:38
+msgid "Plugin Settings"
+msgstr "Plugin de Configuración"
+
+#: includes/settings.php:41
+msgid "Featured Page Widget settings have been reset to defaults."
+msgstr "Destacados de la página configuración de Widget se han restablecido a los valores predeterminados."
+
+#: includes/settings.php:54
+msgid "Save Settings"
+msgstr "Guardar configuración"
+
+#: includes/settings/image.php:19
+msgid "Default Image Settings"
+msgstr "La configuración predeterminada de la imagen"
+
+#: includes/settings/image.php:24
+msgid "Default Image Alignment"
+msgstr "Por defecto de alineación de la imagen"
+
+#: includes/settings/image.php:26
+#: includes/widget-form.php:111
+msgid "No Image Alignment"
+msgstr "No Alineación de la imagen"
+
+#: includes/settings/image.php:27
+#: includes/settings/links.php:43
+#: includes/widget-form.php:88
+#: includes/widget-form.php:112
+msgid "Align Left"
+msgstr "Alinear a la izquierda"
+
+#: includes/settings/image.php:28
+#: includes/settings/links.php:44
+#: includes/widget-form.php:89
+msgid "Align Centered"
+msgstr "Centrado Alinear"
+
+#: includes/settings/image.php:29
+#: includes/settings/links.php:45
+#: includes/widget-form.php:90
+#: includes/widget-form.php:114
+msgid "Align Right"
+msgstr "Alinear a la derecha"
+
+#: includes/settings/image.php:34
+msgid "Default Thumbnail Size"
+msgstr "El tama&ntilde;o predeterminado Miniatura"
+
+#: includes/settings/image.php:37
+#: includes/widget-form.php:120
+msgid "No Thumbnail"
+msgstr "No Miniatura"
+
+#: includes/settings/image.php:38
+#: includes/widget-form.php:121
+msgid "Thumbnail (150x150px)"
+msgstr "Miniatura (150x150px)"
+
+#: includes/settings/image.php:39
+#: includes/widget-form.php:122
+msgid "Medium (300x300px)"
+msgstr "Medio (300x300px)"
+
+#: includes/settings/image.php:40
+#: includes/widget-form.php:123
+msgid "Large (640x640px)"
+msgstr "De gran tama&ntilde;o (640x640px)"
+
+#: includes/settings/image.php:49
+msgid "Small image size"
+msgstr "Peque&ntilde;o tama&ntilde;o de la imagen"
+
+#: includes/settings/image.php:56
+msgid "Full image size"
+msgstr "La imagen a tama&ntilde;o completo"
+
+#: includes/settings/image.php:63
+msgid "Crop Method"
+msgstr "M&eacute;todo de cultivos"
+
+#: includes/settings/image.php:65
+msgid "Hard - Maintain aspect"
+msgstr "Duro - Mantener aspecto"
+
+#: includes/settings/image.php:66
+msgid "Soft - Proportional resize"
+msgstr "Soft - cambiar el tama&ntilde;o proporcional"
+
+#: includes/settings/image.php:70
+msgid "Image Notice"
+msgstr "Imagen Comunicación"
+
+#: includes/settings/image.php:74
+msgid "If you change the sizes of these images, you must run the %1$s command from %2$s by %3$s to create and register the images."
+msgstr "Si cambia el tama&ntilde;o de estas imágenes, debe ejecutar el comando %1$s en %2$s en %3$s para crear y registrar las imágenes."
+
+#: includes/settings/image.php:75
+#: includes/settings/image.php:76
+#: includes/settings/image.php:81
+msgid "Regenerate Thumbnails"
+msgstr "Regenerar Miniaturas"
+
+#: includes/settings/image.php:80
+msgid "If you change the sizes of the images on this page, your existing images will not automatically be resized. I suggest using the %1$s plugin by %2$s which will recreate all the image sizes. This only needs to be done if you change these image sizes."
+msgstr "Si cambia el tama&ntilde;o de las imágenes en esta página, las imágenes existentes no serán automáticamente cambia el tama&ntilde;o. Yo sugiero utilizar el %1$s plugin %2$s que volver a crear todos los tama&ntilde;os de imagen. Esto sólo debe hacerse si cambia estos tama&ntilde;os de imagen."
+
+#: includes/settings/administration.php:25
+msgid "Reset to default: "
+msgstr "Restablecimiento de los valores:"
+
+#: includes/settings/administration.php:30
+msgid "Back-up Options: "
+msgstr "Opciones de respaldo:"
+
+#: includes/settings/administration.php:34
+msgid "Restore Options: "
+msgstr "Opciones de restauración:"
+
+#: includes/settings/content.php:18
+msgid "Default Content Settings"
+msgstr "La configuración predeterminada de contenido"
+
+#: includes/settings/content.php:22
+msgid "Default Content Length"
+msgstr "Por defecto de longitud de contenido"
+
+#: includes/settings/content.php:26
+msgid "Allowed Tags"
+msgstr "Admite Etiquetas"
+
+#: includes/settings/content.php:29
+msgid "A comma seperated list of tags to allow"
+msgstr "Una lista separada por comas de etiquetas para permitir que"
+
+#: includes/settings/content.php:33
+msgid "Hide on Selected Page"
+msgstr "Ocultar en la página seleccionada"
+
+#: includes/settings/content.php:36
+msgid "If only one page is selected, otherwise a different random page is displayed"
+msgstr "Si una sola página se selecciona, de lo contrario una página al azar diferentes se muestra"
+
+#: includes/settings/content.php:40
+msgid "Post Types to Include"
+msgstr "Tipos de línea para incluir"
+
+#: includes/settings/links.php:19
+msgid "Default Link Settings"
+msgstr "La configuración predeterminada Enlace"
+
+#: includes/settings/links.php:24
+msgid "Link Text when no link image is present"
+msgstr "Link Text cuando no hay un enlace de imágenes está presente"
+
+#: includes/settings/links.php:28
+msgid "Link Title to Post"
+msgstr "Título del enlace al Post"
+
+#: includes/settings/links.php:32
+msgid "Default Link Target"
+msgstr "Destino predeterminado Enlace"
+
+#: includes/settings/links.php:34
+msgid "No Link target"
+msgstr "Ningún objetivo Enlace"
+
+#: includes/settings/links.php:35
+#: includes/widget-form.php:78
+msgid "New Window"
+msgstr "Nueva ventana"
+
+#: includes/settings/links.php:36
+#: includes/widget-form.php:79
+msgid "Top Window"
+msgstr "Ventana"
+
+#: includes/settings/links.php:40
+msgid "Default Link Alignment"
+msgstr "Enlace por defecto de alineación"
+
+#: includes/settings/links.php:42
+#: includes/widget-form.php:87
+msgid "No Link Alignment"
+msgstr "No Alineación Enlace"
+
+#: includes/widget-form.php:18
+msgid "Widget Title (Leave blank to use page title)"
+msgstr "Widget Título (Deja en blanco para usar título de la página)"
+
+#: includes/widget-form.php:21
+msgid "Link title to Entry"
+msgstr "Vínculo del título a la entrada"
+
+#: includes/widget-form.php:23
+msgid "Contents"
+msgstr "Contenido"
+
+#: includes/widget-form.php:26
+msgid "Feature posts in"
+msgstr "Puestos de trabajo en función de"
+
+#: includes/widget-form.php:27
+msgid "Choose individual pages below"
+msgstr "Seleccione las páginas individuales por debajo"
+
+#: includes/widget-form.php:32
+msgid "Featured Page(s) (CTRL-Click to select multiple)"
+msgstr "Destacados de la página (s) (Ctrl + clic para seleccionar varias)"
+
+#: includes/widget-form.php:40
+msgid "Template"
+msgstr "Plantilla"
+
+#: includes/widget-form.php:50
+msgid "How many to display per page"
+msgstr "¿Cuántas para mostrar por página"
+
+#: includes/widget-form.php:53
+msgid "Show All"
+msgstr "Mostrar todo"
+
+#: includes/widget-form.php:62
+msgid "Do not include current post in content."
+msgstr "No incluyen cargo actual en el contenido."
+
+#: includes/widget-form.php:67
+msgid "Excerpt Length:"
+msgstr "Extracto de longitud:"
+
+#: includes/widget-form.php:71
+msgid "Page Links"
+msgstr "Página de enlaces"
+
+#: includes/widget-form.php:74
+msgid "Link Target:"
+msgstr "Destino de vínculo:"
+
+#: includes/widget-form.php:77
+msgid "No Link Target"
+msgstr "No hay destino del enlace"
+
+#: includes/widget-form.php:84
+msgid "Link Alignment:"
+msgstr "Enlace de alineación:"
+
+#: includes/widget-form.php:93
+msgid "Featured Image Usage"
+msgstr "Destacados de uso de imagen"
+
+#: includes/widget-form.php:98
+msgid "Use thumbnail as"
+msgstr "El uso de miniaturas como"
+
+#: includes/widget-form.php:101
+msgid "Ignore post thumbnail"
+msgstr "No haga caso de post miniatura"
+
+#: includes/widget-form.php:102
+msgid "Page Image"
+msgstr "Imagen de la página"
+
+#: includes/widget-form.php:103
+msgid "Read More Link"
+msgstr "Leer más Enlace"
+
+#: includes/widget-form.php:109
+msgid "Image Alignment:"
+msgstr "Alineación de la imagen:"
+
+#: includes/widget-form.php:113
+msgid "Align Center"
+msgstr "Alinear al centro"
+
+#: includes/widget-form.php:118
+msgid "Image Size:"
+msgstr "Tama&ntilde;o de la imagen:"
+
+#: includes/sidebar.php:17
+msgid "Plugin Information"
+msgstr "Plugin de Información"
+
+#: includes/sidebar.php:19
+msgid "This page sets the defaults for each widget. Each of these settings can be overridden when you add a featured page to the sidebar."
+msgstr "Esta página establece los valores predeterminados para cada widget. Cada una de estas opciones puede ser anulado cuando se agrega una portada a la barra lateral."
+
+#: includes/sidebar.php:20
+msgid "You are using"
+msgstr "Usted está utilizando"
+
+#: includes/sidebar.php:24
+msgid "Usage"
+msgstr "Uso"
+
+#: includes/sidebar.php:29
+msgid "After setting the defaults, you can add widgets on the %1$s screen. Each of the defaults to the left can be overridden for each individual instance. You can also customize how the widget text appears using the following custom fields on the page."
+msgstr "Despu&eacute;s de ajustar los valores por defecto, puede a&ntilde;adir widgets en la pantalla %1$s. Cada uno de los valores por defecto a la izquierda se puede reemplazar para cada instancia individual. Tambi&eacute;n puede personalizar el modo en el texto del widget aparece con los campos personalizados en la página siguiente."
+
+#: includes/sidebar.php:29
+msgid "Appearance &raquo; Widgets"
+msgstr "Apariencia &raquo;  Reproductores"
+
+#: includes/sidebar.php:33
+msgid "The plugin will use the text in this custom field in place of an excerpt from the page. Full HTML is supported in this field."
+msgstr "El plugin se utiliza el texto de este campo personalizado en lugar de un extracto de la página. Full HTML es compatible con este campo."
+
+#: includes/sidebar.php:34
+msgid "Add an image to the widget using the alignment set in the widget settings."
+msgstr "Agregar una imagen a la flash mediante la alineación establecidos en la configuración del widget."
+
+#: includes/sidebar.php:35
+msgid "A full URL to an image to use in place of a text link."
+msgstr "Una dirección URL completa de una imagen para utilizarla en lugar de un enlace de texto."
+
+#: includes/sidebar.php:41
+msgid "Recent Contributors"
+msgstr "Colaboradores recientes"
+
+#: includes/sidebar.php:44
+msgid "GrandSlambert would like to thank these wonderful contributors to this plugin!"
+msgstr "GrandSlambert gustaría dar las gracias a estos contribuyentes maravillosa de este plugin!"
+
+#: includes/footer.php:18
+msgid "Credits"
+msgstr "Cr&eacute;ditos"
+
+#: includes/footer.php:23
+msgid "Thank you for trying the %1$s plugin - I hope you find it useful. For the latest updates on this plugin, vist the %2$s. If you have problems with this plugin, please use our %3$s or take a look at the %4$s"
+msgstr "Gracias por probar el %1$s plugin - Espero que les sea útil. Para conocer las últimas noticias sobre este plugin, visita el %2$s. Si usted tiene problemas con este plugin, por favor, utilice nuestro %3$s o echar un vistazo a el %4$s."
+
+#: includes/footer.php:25
+msgid "official site"
+msgstr "sitio oficial"
+
+#: includes/footer.php:26
+msgid "Support Forum"
+msgstr "Foro de Soporte"
+
+#: includes/footer.php:27
+msgid "Documentation Page"
+msgstr "Documentación página"
+
+#: includes/footer.php:33
+msgid "This plugin is &copy; %1$s by %2$s and is released under the %3$s"
+msgstr "Este plugin es &copy; %1$s por %2$s, y se distribuye bajo la %3$s."
+
+#: includes/footer.php:36
+msgid "GNU General Public License"
+msgstr "GNU Licencia Pública General"
+
+#: includes/footer.php:42
+msgid "Donate"
+msgstr "Dona"
+
+#: includes/footer.php:47
+msgid "If you find this plugin useful, please consider supporting this and our other great %1$s."
+msgstr "Si usted encuentra este útil plugin, por favor considere el apoyo a esta y otras grandes nuestros %1$s."
+
+#: includes/footer.php:47
+msgid "plugins"
+msgstr "plugins"
+
+#: includes/footer.php:49
+msgid "Donate a few bucks!"
+msgstr "Dona un poco de dinero!"
+
+#. Plugin URI of the plugin/theme
+msgid "http://plugins.grandslambert.com/plugins/featured-page-widget.html"
+msgstr "http://plugins.grandslambert.com/plugins/featured-page-widget.html"
+
+#. Description of the plugin/theme
+msgid "Feature pages on your sidebar including an excerpt and either a text or image link to the page."
+msgstr "Característica páginas en la barra lateral que incluye un fragmento y, o bien un enlace de texto o imagen a la página."
+
+#. Author of the plugin/theme
+msgid "grandslambert"
+msgstr "grandslambert"
+
+#. Author URI of the plugin/theme
+msgid "http://grandslambert.com/"
+msgstr "http://grandslambert.com/"
+

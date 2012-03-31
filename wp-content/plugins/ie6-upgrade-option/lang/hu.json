@@ -1,0 +1,18 @@
+{
+    "text_upgrade_now" : "Upgrade Now",
+    "text_you" : "YOU",
+    "button_continue" : "Continue Anyway",
+    "button_close" : "Figyelmeztetés bezárása",
+    "text_you_are_using" : "",
+    "message_failed" : "Wissen Sie, dass Ihr Internet Explorer nicht mehr aktuell ist?",
+    "message_acceptable" : "Not bad. Try using our other recommendations.",
+    "message_recommended" : "Good choice. Stick with it.",
+    "message_description" : "A lehető legjobb eredmény eléréséhez, javasoljuk a böngésző frissítését. Jelenlegi állapotában, gépe veszélynek van kitéve az esetleges kártevő támadásokkal szemben, a hiányzó javítások miatt. Az alábbi lista tartalmazza a legnépszerűbb ingyenesen elérhető programokat.",
+    "message_warning" : "A figyelmeztetés bezárásával elfogadja, hogy a megjelenítés esetleges hibáit.",
+    "message_error" : "Sorry, something went wrong. We're fixing it.",
+    "status_loading" : "Loading...", 
+    "status_approved" : "Browser Approved.", 
+    "status_acceptable" : "Browser Acceptable.", 
+    "status_failed" : "Browser Failed.", 
+    "link_check" : "Check"
+}

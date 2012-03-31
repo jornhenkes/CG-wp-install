@@ -1,0 +1,18 @@
+{
+    "text_upgrade_now" : "Actualizar ahora",
+    "text_you" : "Tu",
+    "button_continue" : "Continuar de todas formas",
+    "button_close" : "Cerrar",
+    "text_you_are_using" : "Estas usando",
+    "message_failed" : "¿Sabías que esta versión del Internet Explorer esta desactualizada?",
+    "message_acceptable" : "No está mal. Trata de usar una de muestras recomendaciones.",
+    "message_recommended" : "Buena opción. Síguelo usando.",
+    "message_description" : "Este sitio web no es compatible con Internet Explorer 6. Algunas cosas podrían ver se mal y tal vez no funcionar. Se recomienda la actualización a una versión más reciente del Internet Explorer u otro navegador web. Debajo se encuentra una lista de los navegadores web más populares.",
+    "message_warning" : "Al cerrar esta ventana usted reconoce que su experiencia en este website será degradada.",
+    "message_error" : "Lo sentimos, ha ocurrido un problema. Lo estamos arreglando.",
+    "status_loading" : "Cargando...", 
+    "status_approved" : "Browser Aprobado.", 
+    "status_acceptable" : "Browser Aceptado.", 
+    "status_failed" : "Browser No aceptado.", 
+    "link_check" : "Revisar"
+}

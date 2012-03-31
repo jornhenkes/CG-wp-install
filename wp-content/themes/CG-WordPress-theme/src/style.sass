@@ -1,0 +1,100 @@
+/*
+  Theme Name: Christengemeenschap kinder en jeugd kampen 
+  Theme URI: http://null
+  Description: Based on the <a href="http://html5boilerplate.com">HTML5 Boilerplate</a> and Bruce Lawson's <a href="http://html5doctor.com/designing-a-blog-with-html5/">Designing a Blog with HTML5</a>.
+  Version: 1.0
+  Author: Jan Henkes & Thomas van der Westen 
+  Author URI: http://trumm.nl/
+  License: GNU General Public License v2.0
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+@import "compass/reset"
+@import "compass/css3"
+
+@import "header"
+@import "kamppages"
+@import "footer"
+@import "frontpage"
+@import "slideshow"
+@import "taxonomy"
+
+body
+  background-color: #e4eef1
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
+  font-size: 12px
+  color: #333
+  
+  // main link styles
+  
+  a
+    text-decoration: none 
+    cursor: pointer
+    color: blue
+  
+          
+  #container
+    width: 960px
+    overflow: auto
+    margin: 0 auto 20px 
+    padding: 0 0 20px 0
+    background-color: #ffffff
+    border-bottom: 1px solid #dfe2e3
+    border-left: 1px solid #dfe2e3
+    border-right: 1px solid #dfe2e3
+    +border-bottom-left-radius(5px)
+    +border-bottom-right-radius(5px)
+    
+
+  .page-content
+    b, strong
+      font-weight: bold
+      
+    i, em
+      font-style: italic
+      
+    ul li
+      list-style-type: disc
+      margin-left: 20px
+    
+    ol li
+      margin-left: 20px
+      list-style-type: decimal
+    a 
+      color: #0068A0
+      border-bottom: 1px solid
+      
+      &:hover
+        +opacity(0.7)
+        
+    span.algemenevoorwaarden-title
+      font-weight: bold
+      display: block
+      margin-top: 24px
+  
+  #page_sidebar
+    float: right
+    margin: 25px 
+    font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+    font-size: 15px
+    ul
+      margin-top: 10px
+      li
+        padding: 10px
+        +text-shadow(#fff 0px 1px 1px)
+        list-style: none !important
+        margin-left: 0px
+        font-size: 13px
+        
+        a
+          color: #0068A0
+
+          &:hover
+            +opacity(0.7)
+            border-bottom: 1px solid
+            
+            
+  #main #full-width #main-content
+    width: 950px
+  
+  
+  

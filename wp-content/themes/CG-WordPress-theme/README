@@ -1,0 +1,8 @@
+### Plugins
+
+
+#   Category Custom Fields
+    
+    In het bestand "categoryCustomFieldsAdminHandle.php" moet regel 28 aan gepast worden naar:
+     
+    if(strlen($value)>0)

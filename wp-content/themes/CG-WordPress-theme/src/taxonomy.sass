@@ -1,0 +1,71 @@
+@import "compass/css3"
+
+#main.taxonomy
+  header
+    padding: 20px 25px
+    width: 910px
+    h2
+      font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+      font-size: 30px
+      color: white
+      float: left
+      
+    h3
+      a
+        font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+        font-size: 20px
+        color: white
+        float: right
+        +opacity(0.7)
+        margin-top: 5px
+        
+        &:hover
+          cursor: pointer
+          +opacity(1)
+          
+          
+  #kampen-categories
+    padding: 20px 20px 0 20px
+    overflow: auto
+
+    .category
+      width: 435px
+      height: auto
+      float: left
+      border: 1px solid #fff
+      padding: 10px
+      margin-bottom: 10px
+      margin-top: 10px
+      +border-radius(5px)     
+      .thumbnail
+        float: left
+        margin: 0 20px 0 0
+        .age_bubble
+          +border-radius(40px)
+          padding: 10px
+          font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+          color: #fff
+          float: left
+          position: absolute
+          +rotate(-10deg)
+          margin: -12px -19px 0 -14px
+
+        img
+          +border-radius(5px)
+          +box-shadow()
+
+      .category_title
+        font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+        margin-bottom: 10px
+        font-size: 18px
+
+      .short_description
+        font-size: 13px
+        line-height: 21px
+        font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
+        color: #333
+
+      &:hover
+        background-color: #eeeeee
+        border: 1px solid #d4d4d4
+    

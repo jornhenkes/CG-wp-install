@@ -1,0 +1,18 @@
+{
+    "text_upgrade_now" : "Upgrade Now",
+    "text_you" : "YOU",
+    "button_continue" : "Continue Anyway",
+    "button_close" : "Sluiten",
+    "text_you_are_using" : "",
+    "message_failed" : "Wist u dat deze versie van Internet Explorer verouderd is?",
+    "message_acceptable" : "Not bad. Try using our other recommendations.",
+    "message_recommended" : "Good choice. Stick with it.",
+    "message_description" : "Deze site biedt geen ondersteuning voor Internet Explorer 6. Sommige functie zullen misschien onbruikbaar zijn. Wij raden aan te upgraden naar een nieuwere versie van Internet Explorer of een andere web browser. Een lijst van de meest populaire webbrowsers kan hieronder worden gevonden.",
+    "message_warning" : "Door het sluiten van dit venster, zonder upgrade, zal u problemen blijven ondervinden.",
+    "message_error" : "Sorry, something went wrong. We're fixing it.",
+    "status_loading" : "Loading...", 
+    "status_approved" : "Browser Approved.", 
+    "status_acceptable" : "Browser Acceptable.", 
+    "status_failed" : "Browser Failed.", 
+    "link_check" : "Check"
+}

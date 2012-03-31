@@ -1,0 +1,18 @@
+{
+	"text_upgrade_now" : "Mettre à jour maintenant",
+	"text_you" : "TOI",
+	"button_continue" : "Continuer malgré tout",
+	"button_close" : "Fermer",
+	"text_you_are_using" : "",
+	"message_failed" : "Savez-vous que cette version d’Internet Explorer est obsolète ?",
+	"message_acceptable" : "C’est pas grave. Essayer d’utiliser nos autres recommandations.",
+	"message_recommended" : "Bon choix. Adoptez-le.",
+	"message_description" : "Nous ne supportons plus Internet Explorer 6. Des fonctionnalités marchait mal ou était inutilisables. Nous recommandons la mise à jour d’Internet Explorer ou d’utiliser un autre navigateur. Une liste des navigateurs les plus populaires se trouve ci-dessous.",
+	"message_warning" : "Si vous choisissez de continuer sans faire la mise à jour, sachez que l’utilisation du site en sera dégradée.",
+	"message_error" : "Désolé, ça n’a pas marché. Nous allons corriger ce problème.",
+	"status_loading" : "Chargement…",
+	"status_approved" : "Navigateur approuvé.",
+	"status_acceptable" : "Navigateur acceptable.",
+	"status_failed" : "Navigateur défectueux.",
+	"link_check" : "Vérifier"
+}
