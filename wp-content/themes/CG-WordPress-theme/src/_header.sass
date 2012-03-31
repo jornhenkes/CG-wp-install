@@ -1,7 +1,6 @@
-@import "compass/css3"
-
 header
   background-color: #458fcd
+  border-bottom: 1px solid #036f8d
   // float: left
   width: 100%
   padding: 7px 0 0 0
@@ -39,11 +38,11 @@ header
             display: block
       
         .sub-menu
-          background: #cadde5 url(images/menu_childeren_arrow.png) no-repeat center top
+          background: #cadde5 url(images/menu_childeren_arrow.png) no-repeat 32px 0
           padding: 20px 0px 10px
-          margin: 12px 0 0 -10px
+          margin: 13px 0 0 -10px
           float: left
-          border-top: 0px 
+          border-top: 1px solid #458fcd
           border-left: 1px solid #036f8d
           border-bottom: 1px solid #036f8d
           border-right: 1px solid #036f8d              
@@ -57,7 +56,7 @@ header
             float: none
             width: auto
             text-align: left
-            padding: 5px 10px 
+            padding: 3px 10px 
             list-style-type: none
             
             a
@@ -65,15 +64,14 @@ header
               font-size: 14px
               color: #003341
               +text-shadow(none)
-              padding: 5px 10px
-              width: auto
-              
+              padding: 9px 10px
+              display: block
               &:hover
                 font-weight: normal
                 color: #ef3e42
                 background-color: #edf7fa
                 +border-radius(5px)
-                width: auto
+                display: block
                 
           .current_page_item a, .current-menu-item a
             font-weight: normal
