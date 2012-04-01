@@ -27,6 +27,27 @@ get_header(); ?>
 <a href="<?php get_bloginfo('url') ?>" alt="" id="cg_logo_holder">
     <img src="<?php bloginfo('template_directory'); ?>/images/CG-logo_transparant.png" width="916" height="149" alt="CG Logo Transparant">
 </a>
+<div id="news">
+<?php
+$i = 0;
+$the_query = new WP_Query( 'posts_per_page=4' );
+if (have_posts()) : 	
+	while ( $the_query->have_posts() ) : $the_query->the_post();
+	$i++; ?>
+		<div class="post">
+		<h1><?php the_title(); ?></h1>
+		<?php if ($i == '1'){ ?>
+			<div class="excerpt">
+				<?php the_excerpt(); ?>
+			</div>
+		<?php } ?>
+		
+	<?php 
+	endwhile;
+endif;
+wp_reset_postdata();
+?>
+</div>
 
 <div id="kampen-categories">
     <?php

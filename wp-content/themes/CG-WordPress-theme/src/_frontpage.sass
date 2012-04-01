@@ -1,150 +1,152 @@
+#news
+	
 #kampen-categories
-  padding: 20px 20px 0 20px
-  overflow: auto
-
-  .category
-    width: 435px
-    height: auto
-    float: left
-    border: 1px solid #fff
-    padding: 10px
-    margin-bottom: 10px
-    margin-top: 10px
-    +border-radius(5px)     
-    .thumbnail
-      float: left
-      margin: 0 20px 0 0
-      .age_bubble
-        +border-radius(40px)
-        padding: 10px
-        font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
-        color: #fff
-        float: left
-        position: absolute
-        +rotate(-10deg)
-        margin: -12px -19px 0 -14px
-        -sand-transform: rotate(-45deg)
-        -sand-border-radius: 10px
-        
-      
-      img
-        +border-radius(5px)
-        +box-shadow()
-      
-    .category_title
-      font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
-      margin-bottom: 10px
-      font-size: 18px
-    
-    .short_description
-      font-size: 13px
-      line-height: 21px
-      font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
-      color: #333
-    
-    &:hover
-      background-color: #eeeeee
-      border: 1px solid #d4d4d4
+	padding: 20px 15px 0 20px
+	overflow: hidden
+	width: 450px
+	.category
+		width: 435px
+		height: auto
+		float: left
+		border: 1px solid #fff
+		padding: 10px
+		margin-bottom: 10px
+		margin-top: 10px
+		+border-radius(5px)			
+		.thumbnail
+			float: left
+			margin: 0 20px 0 0
+			.age_bubble
+				+border-radius(40px)
+				padding: 10px
+				font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+				color: #fff
+				float: left
+				position: absolute
+				+rotate(-10deg)
+				margin: -12px -19px 0 -14px
+				-sand-transform: rotate(-45deg)
+				-sand-border-radius: 10px
+				
+			
+			img
+				+border-radius(5px)
+				+box-shadow()
+			
+		.category_title
+			font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+			margin-bottom: 10px
+			font-size: 18px
+		
+		.short_description
+			font-size: 13px
+			line-height: 21px
+			font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
+			color: #333
+		
+		&:hover
+			background-color: #eeeeee
+			border: 1px solid #d4d4d4
 
 .dynamic_sidebar
-  overflow: auto
+	overflow: auto
 
-  .kamp-widget
-    background-color: #b8d1dc
-    +border-radius(5px)
-    width: 940px
-    margin: 30px 10px
-    float: left
-  
-    .featured-post-image 
-      float: left
-      margin: 0 40px 0 20px
-      img
-        border: 10px solid white
-        +box-shadow()
-        +rotate(-5deg)
+	.kamp-widget
+		background-color: #b8d1dc
+		+border-radius(5px)
+		width: 940px
+		margin: 30px 10px
+		float: left
+	
+		.featured-post-image 
+			float: left
+			margin: 0 40px 0 20px
+			img
+				border: 10px solid white
+				+box-shadow()
+				+rotate(-5deg)
 
-    .featured-post-title 
-      margin: 20px 0 20px 0
-      float: left
-      width: 415px
-      a
-        font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
-        color: white
-        +text-shadow(#3070a7,0px)
-        font-size: 35px
-      
-    
-  
-    .featured_post_content
-      color: #333
-      width: 415px
-      line-height: 28px
-      font-size: 13px
-      float: left
-      //read more link
-      a 
-        color: #0073a3
-        font-weight: bold
-        font-size: 14px
-      
-  .tekstpagina
-    width: 400px
-    margin: 20px 30px
-    clear: none
-    float: left
+		.featured-post-title 
+			margin: 20px 0 20px 0
+			float: left
+			width: 415px
+			a
+				font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+				color: white
+				+text-shadow(#3070a7,0px)
+				font-size: 35px
+			
+		
+	
+		.featured_post_content
+			color: #333
+			width: 415px
+			line-height: 28px
+			font-size: 13px
+			float: left
+			//read more link
+			a 
+				color: #0073a3
+				font-weight: bold
+				font-size: 14px
+			
+	.tekstpagina
+		width: 400px
+		margin: 20px 30px
+		clear: none
+		float: left
 
-    .featured-post-image 
-      float: left
-      margin: 0 40px 0 20px
-      img
-        border: 10px solid white
-        +box-shadow()
-        +rotate(-5deg)
+		.featured-post-image 
+			float: left
+			margin: 0 40px 0 20px
+			img
+				border: 10px solid white
+				+box-shadow()
+				+rotate(-5deg)
 
-    .featured-post-title 
-      margin: 20px 0 20px 0
-      a
-        font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
-        color: #0095bf
-        +text-shadow(#3070a7,0px)
-        font-size: 35px
+		.featured-post-title 
+			margin: 20px 0 20px 0
+			a
+				font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+				color: #0095bf
+				+text-shadow(#3070a7,0px)
+				font-size: 35px
 
 
 
-    .featured_post_content
-      color: #333
-      width: 400px
-      line-height: 28px
-      font-size: 13px
-      //read more link
-      a 
-        color: #0073a3
-        font-weight: bold
-        font-size: 14px      
+		.featured_post_content
+			color: #333
+			width: 400px
+			line-height: 28px
+			font-size: 13px
+			//read more link
+			a 
+				color: #0073a3
+				font-weight: bold
+				font-size: 14px			 
 
-  .kortekopjes
-    width: 210px
-    float: left
-    clear: none
-    margin-left: 20px
-  
-    .featured-post-title
-      font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
-      font-size: 20px
-      margin-bottom: 15px
-      a
-        color: #0073a3
-    .featured_post_content
-      color: #333
-      line-height: 22px
-      font-size: 12px
-      //read more link
-      a 
-        color: #0073a3
-        font-weight: bold
-        font-size: 14px
+	.kortekopjes
+		width: 210px
+		float: left
+		clear: none
+		margin-left: 20px
+	
+		.featured-post-title
+			font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+			font-size: 20px
+			margin-bottom: 15px
+			a
+				color: #0073a3
+		.featured_post_content
+			color: #333
+			line-height: 22px
+			font-size: 12px
+			//read more link
+			a 
+				color: #0073a3
+				font-weight: bold
+				font-size: 14px
 
-  
-  article header
-    background: none
+	
+	article header
+		background: none
