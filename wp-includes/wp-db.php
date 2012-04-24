@@ -752,7 +752,7 @@ class wpdb {
 <li>Heeft de gebruiker <code>%2$s</code> voldoende rechten om de <code>%1$s</code> database te gebruiken?</li>
 <li>Op sommige systemen heeft de naam van je database de prefix van je gebruikersnaam, dat zou dan <code>username_%1$s</code> kunnen zijn. Zou dit het probleem kunnen zijn?</li>
 </ul>
-<p>Als je niet weet hoe je een database moet configureren neem dan <strong>contact op met je host</strong>. Als niets helpt kun je nog hulp zoeken op de <a href="http://wordpress.org/support/">WordPress Support Forums</a>.</p>'/*/WP_I18N_DB_SELECT_DB*/, $db, $this->dbuser ), 'db_select_fail' );
+<p>Als je niet weet hoe je een database moet configureren neem dan <strong>contact op met je host</strong>. Als niets helpt kun je nog hulp zoeken op de <a href="http://wordpress.org/support/">WordPress Support Forums</a>.</p>'/*/WP_I18N_DB_SELECT_DB*/, htmlspecialchars( $db, ENT_QUOTES ), htmlspecialchars( $this->dbuser, ENT_QUOTES ) ), 'db_select_fail' );
 			return;
 		}
 	}
@@ -1046,7 +1046,7 @@ class wpdb {
 	<li>Weet je zeker dat de databaseserver draait?</li>
 </ul>
 <p>Ben je niet bekend met deze terminologie, dan kan je het best contact opnemen met je hostingprovider. Als je dan nog steeds hulp nodig hebt, kan je het <a href=\'http://nl.forums.wordpress.org/\'>Nederlandse support forum</a> bezoeken.</p>
-'/*/WP_I18N_DB_CONN_ERROR*/, $this->dbhost ), 'db_connect_fail' );
+'/*/WP_I18N_DB_CONN_ERROR*/, htmlspecialchars( $this->dbhost, ENT_QUOTES ) ), 'db_connect_fail' );
 
 			return;
 		}
