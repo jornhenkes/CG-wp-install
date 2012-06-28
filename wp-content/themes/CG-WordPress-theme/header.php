@@ -80,6 +80,12 @@
 <!--[if IE 8 ]>    <body <?php body_class('ie8'); ?>> <![endif]-->
 <!--[if IE 9 ]>    <body <?php body_class('ie9'); ?>> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body <?php body_class('ie6'); ?>> <!--<![endif]-->
+<?
+//DEV-mode notification
+if ($_SERVER['HTTP_HOST'] == "christengemeenschapkampen.dev" || $_SERVER['HTTP_HOST'] == "www.christengemeenschapkampen.dev") {
+echo "<center><div class=\"dev_mode\">Let op: je werkt op dit moment in de DEV-mode!</div></center>";
+} else { }
+//einde DEV-mode notification ?>
     <header role="banner">
         <nav id="main">
             <?php wp_nav_menu( array('menu' => 'Top menu' )); ?>
