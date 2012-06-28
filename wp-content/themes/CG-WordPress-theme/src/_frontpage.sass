@@ -1,52 +1,97 @@
-#news
+@import compass/utilities/general/clearfix
+
+#news-kampen_categories
+	+clearfix
 	
-#kampen-categories
-	padding: 20px 15px 0 20px
-	overflow: hidden
-	width: 450px
-	.category
-		width: 435px
-		height: auto
-		float: left
-		border: 1px solid #fff
-		padding: 10px
+	#kop-title
+		font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
 		margin-bottom: 10px
-		margin-top: 10px
-		+border-radius(5px)			
-		.thumbnail
+		font-size: 20px
+		color: #dddddd
+		margin-bottom: 20px
+	
+	.center-text
+		text-align: center
+
+
+	#frontpage-news
+		padding: 20px 15px 0 20px
+		overflow: hidden
+		width: 400px
+		float: left
+		+clearfix
+		
+		ul.post-list
+			li.post
+				font-size: 13px
+				line-height: 21px
+				font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
+				color: #333
+				margin: 10px 0
+				list-style-type: square
+				list-style-position: inside
+				a
+					color: #2A5CAA
+					text-decoration: underline
+				h3
+					font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+					margin-bottom: 10px
+					font-size: 18px
+					color: #2A5CAA
+					
+					a 
+						text-decoration: none !important
+
+						
+					 
+	#kampen-categories
+		padding: 20px 15px 0 20px
+		overflow: hidden
+		width: 450px
+		float: right
+		.category
+			width: 435px
+			height: auto
 			float: left
-			margin: 0 20px 0 0
-			.age_bubble
-				+border-radius(40px)
-				padding: 10px
-				font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
-				color: #fff
+			border: 1px solid #fff
+			padding: 10px
+			margin-bottom: 10px
+			margin-top: 10px
+			+border-radius(5px)			
+			.thumbnail
 				float: left
-				position: absolute
-				+rotate(-10deg)
-				margin: -12px -19px 0 -14px
-				-sand-transform: rotate(-45deg)
-				-sand-border-radius: 10px
+				margin: 0 20px 0 0
+				.age_bubble
+					+border-radius(40px)
+					padding: 10px
+					font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+					color: #fff
+					float: left
+					position: absolute
+					+rotate(-10deg)
+					margin: -12px -19px 0 -14px
+					-sand-transform: rotate(-45deg)
+					-sand-border-radius: 10px
 				
 			
-			img
-				+border-radius(5px)
-				+box-shadow()
+				img
+					+border-radius(5px)
+					+box-shadow()
 			
-		.category_title
-			font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
-			margin-bottom: 10px
-			font-size: 18px
+			.category_title
+				font-family: "PraterSansOne-Bold", ff-prater-sans-web, sans-serif
+				margin-bottom: 10px
+				font-size: 18px
 		
-		.short_description
-			font-size: 13px
-			line-height: 21px
-			font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
-			color: #333
+			.short_description
+				font-size: 13px
+				line-height: 21px
+				font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
+				color: #333
 		
-		&:hover
-			background-color: #eeeeee
-			border: 1px solid #d4d4d4
+			&:hover
+				background-color: #eeeeee
+				border: 1px solid #d4d4d4
 
 .dynamic_sidebar
 	overflow: auto

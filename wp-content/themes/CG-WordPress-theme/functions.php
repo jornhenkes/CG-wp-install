@@ -389,3 +389,18 @@ if(!in_array($_SERVER['HTTP_HOST'], $whitelist)){
   }
 
 }
+
+// cumstom excerpt
+// Excerpt - usage - < ?php echo excerpt(15); ? > - remove the spaces between the < and ?
+function excerpt($limit) {
+ $excerpt = explode(' ', get_the_excerpt(), $limit);
+ if (count($excerpt)>=$limit) {
+   array_pop($excerpt);
+   $excerpt = implode(" ",$excerpt);
+ } else {
+   $excerpt = implode(" ",$excerpt);
+ } 
+ $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+ $link_to_post = '<a href="'.get_permalink() .'" alt="'. get_the_title().'">Lees verder</a>';
+ return $excerpt . $link_to_post;
+}
