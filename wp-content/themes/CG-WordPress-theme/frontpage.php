@@ -42,7 +42,7 @@ get_header(); ?>
               <h3><a href="<?php get_permalink() ?>" alt="<?php the_title() ?>"><?php the_title(); ?></a></h3>
           		<?php if ($i == '1'){ ?>
           			<div class="excerpt">
-          				<?php echo excerpt(350); ?>
+          				<?php //echo excerpt(350); ?>
           			</div>
           		<?php } ?>
       		  </li>		
