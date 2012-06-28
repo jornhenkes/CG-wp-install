@@ -82,7 +82,9 @@ define('WPLANG', 'nl_NL');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
+define('WP_MEMORY_LIMIT', '128M');
 define('WP_DEBUG', false);
+// define('FS_METHOD', 'direct');
 
 /* That's all, stop editing! Happy blogging. */
 

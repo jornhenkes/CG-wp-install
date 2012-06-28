@@ -30,7 +30,7 @@ if ( $featured->have_posts() ) : while ($featured->have_posts()) : $featured->th
      </h3>
 
      <div id="featured_post_content_<?php the_id(); ?>" class="featured_post_content">
-          <?php the_excerpt(); ?> <?php the_featured_post_read_more_link('lees meer'); ?>
+          <?php the_featured_post_content(); ?> <?php the_featured_post_read_more_link('read more'); ?>
      </div>
 
 </div>

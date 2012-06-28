@@ -15,7 +15,11 @@ function gf_apply_rules(formId, fields, isInit){
     }
 }
 
-function gf_apply_field_rule(formId, fieldId, isInit, callback){
+function gf_check_field_rule(formId, fieldId, isInit, callback){
+
+    //if conditional logic is not specified for that field, it is supposed to be displayed
+    if(!window["gf_form_conditional_logic"][formId] || !window["gf_form_conditional_logic"][formId]["logic"][fieldId])
+        return "show";
 
     var conditionalLogic = window["gf_form_conditional_logic"][formId]["logic"][fieldId];
 
@@ -25,8 +29,16 @@ function gf_apply_field_rule(formId, fieldId, isInit, callback){
     if(action != "hide")
         action = gf_get_field_action(formId, conditionalLogic["field"]);
 
+    return action;
+}
+
+function gf_apply_field_rule(formId, fieldId, isInit, callback){
+
+    action = gf_check_field_rule(formId, fieldId, isInit, callback);
+
     gf_do_field_action(formId, action, fieldId, isInit, callback);
 
+    var conditionalLogic = window["gf_form_conditional_logic"][formId]["logic"][fieldId];
     //perform conditional logic for the next button
     if(conditionalLogic["nextButton"]){
         action = gf_get_field_action(formId, conditionalLogic["nextButton"]);
@@ -167,7 +179,8 @@ function gf_do_field_action(formId, action, fieldId, isInit, callback){
 
         //calling callback function on the last dependent field, to make sure it is only called once
         do_callback = (i+1) == dependent_fields.length ? callback : null;
-        gf_do_action(action, targetId, conditional_logic["animation"], isInit, do_callback);
+
+        gf_do_action(action, targetId, conditional_logic["animation"], conditional_logic["defaults"][dependent_fields[i]], isInit, do_callback);
     }
 }
 
@@ -175,23 +188,39 @@ function gf_do_next_button_action(formId, action, fieldId, isInit){
     var conditional_logic = window["gf_form_conditional_logic"][formId];
     var targetId = "#gform_next_button_" + formId + "_" + fieldId;
 
-    gf_do_action(action, targetId, conditional_logic["animation"], isInit);
+    gf_do_action(action, targetId, conditional_logic["animation"], null, isInit);
 }
 
-function gf_do_action(action, targetId, useAnimation, isInit, callback){
+function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, callback){
+
     if(action == "show"){
         if(useAnimation && !isInit){
-            jQuery(targetId).slideDown(callback);
+            if(jQuery(targetId).length > 0)
+                jQuery(targetId).slideDown(callback);
+            else if(callback)
+                callback();
+
         }
         else{
             jQuery(targetId).show();
-            if(callback)
+            if(callback){
                 callback();
+            }
         }
     }
     else{
+        //if field is not already hidden, reset its values to the default
+        var child = jQuery(targetId).children().first();
+
+        if(!gformIsHidden(child)){
+            gf_reset_to_default(targetId, defaultValues);
+        }
+
         if(useAnimation && !isInit){
-            jQuery(targetId).slideUp(callback);
+            if(jQuery(targetId).length > 0)
+                jQuery(targetId).slideUp(callback);
+            else if(callback)
+                callback();
         }
         else{
             jQuery(targetId).hide();
@@ -199,5 +228,51 @@ function gf_do_action(action, targetId, useAnimation, isInit, callback){
                 callback();
         }
     }
+}
+
+function gf_reset_to_default(targetId, defaultValue){
+
+    //cascading down conditional logic to children to suppport nested conditions
+    //text fields and drop downs
+    var target = jQuery(targetId).find('select, input[type="text"], input[type="number"], textarea');
+
+    var target_index = 0;
+
+    target.each(function(){
+        var val = "";
+        if(jQuery.isArray(defaultValue)){
+            val = defaultValue[target_index];
+        }
+        else if(jQuery.isPlainObject(defaultValue)){
+            val = defaultValue[jQuery(this).attr("name")];
+        }
+        else if(defaultValue){
+            val = defaultValue;
+        }
+
+        jQuery(this).val(val).trigger('change');
+        target_index++;
+    });
+
+    //checkboxes and radio buttons
+    var elements = jQuery(targetId).find('input[type="radio"], input[type="checkbox"]');
+
+    elements.each(function(){
+
+        //is input currently checked?
+        var isChecked = jQuery(this).is(':checked') ? true : false;
+
+        //does input need to be marked as checked or unchecked?
+        var doCheck = defaultValue ? jQuery.inArray(jQuery(this).attr('id'), defaultValue) > -1 : false;
+
+        //if value changed, trigger click event
+        if(isChecked != doCheck){
+            //setting input as checked or unchecked appropriately
+            jQuery(this).prop("checked", doCheck);
+
+            //need to set the prop again after the click is triggered
+            jQuery(this).trigger('click').prop('checked', doCheck);
+        }
+    });
 }
 

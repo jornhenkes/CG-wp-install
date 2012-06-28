@@ -4,7 +4,7 @@
  * @subpackage HTML5_Boilerplate
  */
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
@@ -31,9 +31,10 @@
   <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."html5-boilerplate/js/modernizr-1.5.min.js") ?>
 
   <!-- Loading typekit font('s) -->
-  <script type="text/javascript" src="http://use.typekit.com/cqo3pll.js"></script>
+  <script type="text/javascript" src="http://use.typekit.com/jyc6gpy.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
+  <!-- Javascript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>

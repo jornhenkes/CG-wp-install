@@ -184,11 +184,13 @@ function SetProductField(field){
             productFields.push(form["fields"][i]);
     }
 
-    if(productFields.length <= 1){
-        jQuery(".product_field_setting").hide();
+    jQuery("#gform_no_product_field_message").remove();
+    if(productFields.length < 1){
+        jQuery("#product_field").hide().after("<div id='gform_no_product_field_message'><?php _e("This field is not associated with a product. Please add a Product Field to the form.", "gravityforms") ?></div>");
     }
     else{
         var product_field = jQuery("#product_field");
+        product_field.show();
         product_field.html("");
         var is_selected = false;
         for(var i=0; i<productFields.length; i++){
@@ -201,8 +203,9 @@ function SetProductField(field){
         }
 
         //Adds existing product field if it is not found in the list (to prevent confusion)
-        if(!is_selected && field["productField"] != "")
+        if(!is_selected && field["productField"] != ""){
             product_field.append("<option value='" + field["productField"] + "' selected='selected'>[<?php _e("Deleted Field", "gravityforms") ?>]</option>");
+        }
 
     }
 }
@@ -558,6 +561,8 @@ function SetDefaultValues(field){
             field.label = "<?php _e("Captcha", "gravityforms"); ?>";
 
             break;
+        case "calculation" :
+            field.enableCalculation = true;
         case "singleproduct" :
         case "product" :
         case "hiddenproduct" :
@@ -567,7 +572,7 @@ function SetDefaultValues(field){
             if(!field.inputType)
                 field.inputType = "singleproduct";
 
-            if(field.inputType == "singleproduct" || field.inputType == "hiddenproduct"){
+            if(field.inputType == "singleproduct" || field.inputType == "hiddenproduct" || field.inputType == "calculation"){
                 field.inputs = [new Input(field.id + 0.1, '<?php echo __("Name", "gravityforms"); ?>'), new Input(field.id + 0.2, '<?php echo __("Price", "gravityforms"); ?>'), new Input(field.id + 0.3, '<?php echo __("Quantity", "gravityforms"); ?>')];
                 field.enablePrice = null;
             }
@@ -728,6 +733,13 @@ function CanFieldBeAdded(type){
                 return false;
             }
         break;
+        case "quantity" :
+        case "option" :
+            if(GetFieldsByType(["product"]).length <= 0){
+                alert("<?php _e("You must add a product field to the form first", "gravityforms") ?>");
+                return false;
+            }
+        break;
     }
     return true;
 }
@@ -827,7 +839,7 @@ function CreateConditionalLogic(objectType, obj){
         var startsWithSelected = obj.conditionalLogic.rules[i].operator == "starts_with" ? "selected='selected'" :"";
         var endsWithSelected = obj.conditionalLogic.rules[i].operator == "ends_with" ? "selected='selected'" :"";
 
-        str += "<div style='width:100%'>" + GetRuleFields(objectType, i, obj.conditionalLogic.rules[i].fieldId);
+        str += "<div width='100%'>" + GetRuleFields(objectType, i, obj.conditionalLogic.rules[i].fieldId);
         str += "<select id='" + objectType + "_rule_operator_" + i + "' onchange='SetRuleProperty(\"" + objectType + "\", " + i + ", \"operator\", jQuery(this).val());'><option value='is' " + isSelected + "><?php _e("is", "gravityforms") ?></option><option value='isnot' " + isNotSelected + "><?php _e("is not", "gravityforms") ?></option><option value='>' " + greaterThanSelected + "><?php _e("greater than", "gravityforms") ?></option><option value='<' " + lessThanSelected + "><?php _e("less than", "gravityforms") ?></option><option value='contains' " + containsSelected + "><?php _e("contains", "gravityforms") ?></option><option value='starts_with' " + startsWithSelected + "><?php _e("starts with", "gravityforms") ?></option><option value='ends_with' " + endsWithSelected + "><?php _e("ends with", "gravityforms") ?></option></select>";
         str += GetRuleValues(objectType, i, obj.conditionalLogic.rules[i].fieldId, obj.conditionalLogic.rules[i].value);
         str += "<img src='" + imagesUrl + "/add.png' class='add_field_choice' title='add another rule' alt='add another rule' style='cursor:pointer; margin:0 3px;' onclick=\"InsertRule('" + objectType + "', " + (i+1) + ");\" />";

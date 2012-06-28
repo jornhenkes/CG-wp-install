@@ -197,210 +197,190 @@ register_sidebar(array(
 
 set_post_thumbnail_size( 140, 90, true );
 
-$whitelist = array('localhost:8888', 'localhost');
+// $site_path = realpath(dirname(__FILE__));
+// define ('__SITE_PATH', $site_path);
+// 
+// define('FPDF_FONTPATH','PEAR/fpdf/font/');
+// require 'PEAR/fpdf/fpdf.php';
+// class PDF extends FPDF
+// {
+//  public function Footer()
+//  {
+//  }
+//  
+//  public function CheckPageHeight( $height = null ) 
+//  {
+//    $y = $this->GetY();
+//    $factor = ! is_null( $height ) ? 270 - $height : 260;
+//    if ( $y > $factor ) $this->AddPage();
+//  }
+// }
 
-if(!in_array($_SERVER['HTTP_HOST'], $whitelist)){
-  $site_path = realpath(dirname(__FILE__));
-  define ('__SITE_PATH', $site_path);
-
-  define('FPDF_FONTPATH','PEAR/fpdf/font/');
-  require 'PEAR/fpdf/fpdf.php';
-  class PDF extends FPDF
-  {
-    public function Footer()
-    {
-    }
-  
-    public function CheckPageHeight( $height = null ) 
-    {
-      $y = $this->GetY();
-      $factor = ! is_null( $height ) ? 270 - $height : 260;
-      if ( $y > $factor ) $this->AddPage();
-    }
-  }
-
-  add_action("gform_post_submission_1", "send_pdf", 10, 1);
-
-  function send_pdf ( $entry, $form ) {
-    $campChoice = $entry[1];
-    $campSecondChoice = $entry[2];
-    $choiceOptions = $entry[16];
-    $swim = $entry[4];
-    $firstName = $entry['5.3'];
-    $surName = $entry['5.6'];
-    $address = $entry['6.1'];
-    $zip = $entry['6.3'];
-    $place = $entry['6.5'];
-    $country = $entry['6.6'];
-    $birth = $entry[7];
-    $gender = $entry[8];
-    $phone = $entry[11];
-    $email = $entry[10];
-    $financialAgreement = $entry[12];
-  
-    /* Winterkamp */
-    $workshop = $entry[13];
-    $ownMaterial = $entry['14.1'];
-    $snowboard = $entry['14.2'];
-    $snowboardShoes = $entry['14.3'];
-    $skis = $entry['14.4'];
-    $skiShoes = $entry['14.5'];
-    $helmet = $entry['14.6'];
-    $choiceOptionsWinterkamp = $entry[15];
-  
-    $pdf =& new PDF();
-  
-    $pdf->AddPage();
-    $pdf->SetMargins(20, 25);
-    $pdf->SetAutoPageBreak( true, 5 );    
-  
-    $pdf->SetXY(20, 25);
-
-    $pdf->SetFont('Helvetica','',25);
-    $pdf->Write(12, 'Aanmelding');
-    $pdf->Ln();
-  
-    $pdf->SetY(45);
-
-    $pdf->SetFont('Helvetica','',10);
-    $pdf->Write(7, 'Eerste keuze: ' . $campChoice );
-    $pdf->Ln();
-    $pdf->Write(7, 'Tweede keuze: ' . $campSecondChoice );
-    $pdf->Ln();
-    $pdf->Ln();
-    if ( $campChoice == 'Zeilkamp' || $campChoice == 'Zeilzwerfkamp' || $campSecondChoice == 'Zeilkamp' || $campSecondChoice == 'Zeilzwerfkamp' )
-    {
-      $pdf->Write(7, 'Zwemdiploma: ' . $swim);
-      $pdf->Ln();
-    }
-    if ( $campChoice == 'Winterkamp' || $campSecondChoice == 'Winterkamp' )
-    {
-      $pdf->Write(7, 'Workshop: ' . $workshop);
-      $pdf->Ln();
-      $pdf->Ln();
-      $pdf->SetFont('Helvetica','B',10);
-      $pdf->Write(7, 'Materiaal:');
-      $pdf->Ln();
-      $pdf->SetFont('Helvetica','',10);
-      if ( strlen( $ownMaterial ) > 0 ) 
-      {
-        $pdf->Write(7, 'Ik neem mijn eigen materiaal mee');
-        $pdf->Ln();
-      }
-      if ( strlen( $snowboard ) > 0 ) 
-      {
-        $pdf->Write(7, 'Snowboard huren + € 70,-');
-        $pdf->Ln();
-      }
-      if ( strlen( $snowboardShoes ) > 0 ) 
-      {
-        $pdf->Write(7, 'Snowboardschoenen huren + € 45,-');
-        $pdf->Ln();
-      }
-      if ( strlen( $skis ) > 0 ) 
-      {
-        $pdf->Write(7, 'Ski\'s huren + € 70,-');
-        $pdf->Ln();
-      }
-      if ( strlen( $skiShoes ) > 0 ) 
-      {
-        $pdf->Write(7, 'Skischoenen huren + € 45,-');
-        $pdf->Ln();
-      }
-      if ( strlen( $helmet ) > 0 ) 
-      {
-        $pdf->Write(7, 'Helm huren + € 35,-');
-        $pdf->Ln();
-      }
-      $pdf->Ln();
-      $pdf->Write(7, $choiceOptionsWinterkamp);
-      $pdf->Ln();
-      $pdf->Ln();
-    }
-    else 
-    {
-      $pdf->Write(7,$choiceOptions);  
-      $pdf->Ln();
-      $pdf->Ln();
-    }
-    $pdf->Write(7,'Voornaam: ' . $firstName);
-    $pdf->Ln();
-    $pdf->Write(7, 'Achternaam: ' . $surName);
-    $pdf->Ln();
-    $pdf->Write(7, 'Adres: ' . $address);
-    $pdf->Ln();
-    $pdf->Write(7, 'Postcode en plaats: ' . $zip . ' ' . $place );
-    $pdf->Ln();
-    $pdf->Write(7, 'Land: '. $country);
-    $pdf->Ln();
-    $pdf->Ln();
-    $pdf->Write(7, 'Geboortedatum: ' . $birth);
-    $pdf->Ln();
-    $pdf->Write(7, 'Geslacht: ' . $gender);
-    $pdf->Ln();
-    $pdf->Ln();
-    $pdf->Write(7, 'Telefoon: ' . $phone);
-    $pdf->Ln();
-    $pdf->Write(7, 'Email: ' . $email);
-    $pdf->Ln();
-    $pdf->Ln();
-    $pdf->Write(7, 'Financiele regeling: ' . $financialAgreement);
-    $pdf->Ln();
-    $pdf->Ln();
-    $pdf->Write('8', 'Formulier opsturen naar:');
-    $pdf->SetFont('Helvetica','B',12);
-    $pdf->Write('8', 'Christengemeenschap Kinder- en Jeugdkampen, Secretariaat, Postbus 269, 3700 AG Zeist');
-    $pdf->Ln();
-    $pdf->Ln();
-    $pdf->Write('8', 'Datum:');
-    $pdf->Ln();
-    $pdf->Ln();
-    $pdf->Write('8', 'Ondertekening:');
-
-    $fileName = str_replace( 'wwwroot\wp-content\themes\CG-WordPress-theme', 'Forms', __SITE_PATH ) . '/Form-entry-' . $entry['id'] . '.pdf';
-    $pdf->Output( $fileName, 'F');
-  
-    include('PEAR/Mail.php');
-    include('PEAR/Mail/mime.php');
-
-    $crlf = "\n";
-  
-    $mime = new Mail_mime($crlf);
-  
-    $to  = $email;
-    $subject = 'Aanmeldingsformulier';
-  
-    $body = 'Stuur bijgevoegd bestand ondertekend op naar: Christengemeenschap Kinder- en Jeugdkampen, Secretariaat, Postbus 269, 3700 AG Zeist';
-  
-    $hdrs = array(
-                  'From'    => 'Christengemeenschap Kinder- en Jeugdkampen <info@christengemeenschapkampen.nl>',
-                  'Subject' => $subject
-                  );
-                
-    $mime->setTXTBody($body);
-    $mime->setHTMLBody($body);
-    $mime->addAttachment($fileName, 'application/pdf');
-  
-    $body = $mime->get();
-    $hdrs = $mime->headers($hdrs);
-  
-    $mail =& Mail::factory('mail');
-    $mail->send($to, $hdrs, $body);
-  }
-
-}
-
-// cumstom excerpt
-// Excerpt - usage - < ?php echo excerpt(15); ? > - remove the spaces between the < and ?
-function excerpt($limit) {
- $excerpt = explode(' ', get_the_excerpt(), $limit);
- if (count($excerpt)>=$limit) {
-   array_pop($excerpt);
-   $excerpt = implode(" ",$excerpt);
- } else {
-   $excerpt = implode(" ",$excerpt);
- } 
- $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
- $link_to_post = '<a href="'.get_permalink() .'" alt="'. get_the_title().'">Lees verder</a>';
- return $excerpt . $link_to_post;
-}
+// add_action("gform_post_submission_1", "send_pdf", 10, 1);
+// 
+// function send_pdf ( $entry, $form ) {
+//  $campChoice = $entry[1];
+//  $campSecondChoice = $entry[2];
+//  $choiceOptions = $entry[16];
+//  $swim = $entry[4];
+//  $firstName = $entry['5.3'];
+//  $surName = $entry['5.6'];
+//  $address = $entry['6.1'];
+//  $zip = $entry['6.3'];
+//  $place = $entry['6.5'];
+//  $country = $entry['6.6'];
+//  $birth = $entry[7];
+//  $gender = $entry[8];
+//  $phone = $entry[11];
+//  $email = $entry[10];
+//  $financialAgreement = $entry[12];
+//  
+//  /* Winterkamp */
+//  $workshop = $entry[13];
+//  $ownMaterial = $entry['14.1'];
+//  $snowboard = $entry['14.2'];
+//  $snowboardShoes = $entry['14.3'];
+//  $skis = $entry['14.4'];
+//  $skiShoes = $entry['14.5'];
+//  $helmet = $entry['14.6'];
+//  $choiceOptionsWinterkamp = $entry[15];
+//  
+//  $pdf =& new PDF();
+//  
+//  $pdf->AddPage();
+//  $pdf->SetMargins(20, 25);
+//  $pdf->SetAutoPageBreak( true, 5 );    
+//  
+//  $pdf->SetXY(20, 25);
+// 
+//  $pdf->SetFont('Helvetica','',25);
+//  $pdf->Write(12, 'Aanmelding');
+//  $pdf->Ln();
+//  
+//  $pdf->SetY(45);
+// 
+//  $pdf->SetFont('Helvetica','',10);
+//  $pdf->Write(7, 'Eerste keuze: ' . $campChoice );
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Tweede keuze: ' . $campSecondChoice );
+//  $pdf->Ln();
+//  $pdf->Ln();
+//  if ( $campChoice == 'Zeilkamp' || $campChoice == 'Zeilzwerfkamp' || $campSecondChoice == 'Zeilkamp' || $campSecondChoice == 'Zeilzwerfkamp' )
+//  {
+//    $pdf->Write(7, 'Zwemdiploma: ' . $swim);
+//    $pdf->Ln();
+//  }
+//  if ( $campChoice == 'Winterkamp' || $campSecondChoice == 'Winterkamp' )
+//  {
+//    $pdf->Write(7, 'Workshop: ' . $workshop);
+//    $pdf->Ln();
+//    $pdf->Ln();
+//    $pdf->SetFont('Helvetica','B',10);
+//    $pdf->Write(7, 'Materiaal:');
+//    $pdf->Ln();
+//    $pdf->SetFont('Helvetica','',10);
+//    if ( strlen( $ownMaterial ) > 0 ) 
+//    {
+//      $pdf->Write(7, 'Ik neem mijn eigen materiaal mee');
+//      $pdf->Ln();
+//    }
+//    if ( strlen( $snowboard ) > 0 ) 
+//    {
+//      $pdf->Write(7, 'Snowboard huren + € 70,-');
+//      $pdf->Ln();
+//    }
+//    if ( strlen( $snowboardShoes ) > 0 ) 
+//    {
+//      $pdf->Write(7, 'Snowboardschoenen huren + € 45,-');
+//      $pdf->Ln();
+//    }
+//    if ( strlen( $skis ) > 0 ) 
+//    {
+//      $pdf->Write(7, 'Ski\'s huren + € 70,-');
+//      $pdf->Ln();
+//    }
+//    if ( strlen( $skiShoes ) > 0 ) 
+//    {
+//      $pdf->Write(7, 'Skischoenen huren + € 45,-');
+//      $pdf->Ln();
+//    }
+//    if ( strlen( $helmet ) > 0 ) 
+//    {
+//      $pdf->Write(7, 'Helm huren + € 35,-');
+//      $pdf->Ln();
+//    }
+//    $pdf->Ln();
+//    $pdf->Write(7, $choiceOptionsWinterkamp);
+//    $pdf->Ln();
+//    $pdf->Ln();
+//  }
+//  else 
+//  {
+//    $pdf->Write(7,$choiceOptions);  
+//    $pdf->Ln();
+//    $pdf->Ln();
+//  }
+//  $pdf->Write(7,'Voornaam: ' . $firstName);
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Achternaam: ' . $surName);
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Adres: ' . $address);
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Postcode en plaats: ' . $zip . ' ' . $place );
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Land: '. $country);
+//  $pdf->Ln();
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Geboortedatum: ' . $birth);
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Geslacht: ' . $gender);
+//  $pdf->Ln();
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Telefoon: ' . $phone);
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Email: ' . $email);
+//  $pdf->Ln();
+//  $pdf->Ln();
+//  $pdf->Write(7, 'Financiele regeling: ' . $financialAgreement);
+//  $pdf->Ln();
+//  $pdf->Ln();
+//  $pdf->Write('8', 'Formulier opsturen naar:');
+//  $pdf->SetFont('Helvetica','B',12);
+//  $pdf->Write('8', 'Christengemeenschap Kinder- en Jeugdkampen, Secretariaat, Postbus 269, 3700 AG Zeist');
+//  $pdf->Ln();
+//  $pdf->Ln();
+//  $pdf->Write('8', 'Datum:');
+//  $pdf->Ln();
+//  $pdf->Ln();
+//  $pdf->Write('8', 'Ondertekening:');
+// 
+//  $fileName = str_replace( 'wwwroot\wp-content\themes\CG-WordPress-theme', 'Forms', __SITE_PATH ) . '/Form-entry-' . $entry['id'] . '.pdf';
+//  $pdf->Output( $fileName, 'F');
+//  
+//  include('PEAR/Mail.php');
+//  include('PEAR/Mail/mime.php');
+// 
+//  $crlf = "\n";
+//  
+//  $mime = new Mail_mime($crlf);
+//  
+//  $to  = $email;
+//  $subject = 'Aanmeldingsformulier';
+//  
+//  $body = 'Stuur bijgevoegd bestand ondertekend op naar: Christengemeenschap Kinder- en Jeugdkampen, Secretariaat, Postbus 269, 3700 AG Zeist';
+//  
+//  $hdrs = array(
+//                'From'    => 'Christengemeenschap Kinder- en Jeugdkampen <info@christengemeenschapkampen.nl>',
+//                'Subject' => $subject
+//                );
+//                
+//  $mime->setTXTBody($body);
+//  $mime->setHTMLBody($body);
+//  $mime->addAttachment($fileName, 'application/pdf');
+//  
+//  $body = $mime->get();
+//  $hdrs = $mime->headers($hdrs);
+//  
+//  $mail =& Mail::factory('mail');
+//  $mail->send($to, $hdrs, $body);
+// }
