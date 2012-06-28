@@ -28,6 +28,7 @@ get_header(); ?>
     <img src="<?php bloginfo('template_directory'); ?>/images/CG-logo_transparant.png" width="916" height="149" alt="CG Logo Transparant">
 </a>
 <div id="news">
+  <!-- NIEUWS -->
 <?php
 $i = 0;
 $the_query = new WP_Query( 'posts_per_page=4' );
