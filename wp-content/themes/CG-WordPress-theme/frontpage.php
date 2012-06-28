@@ -28,6 +28,7 @@ get_header(); ?>
     <img src="<?php bloginfo('template_directory'); ?>/images/CG-logo_transparant.png" width="916" height="149" alt="CG Logo Transparant">
 </a>
 <div id="news-kampen_categories">
+<!-- nieuws -->
   <div id="frontpage-news">
     <h1 id="kop-title" class="center-text">Nieuws</h1>
     <ul class="post-list">
