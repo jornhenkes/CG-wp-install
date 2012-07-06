@@ -687,3 +687,53 @@
 2011-10-22 22:02:37 overwrite style.css 
 2011-10-22 22:03:36 overwrite style.css 
 2011-10-22 22:03:36 overwrite taxonomy.css 
+2012-07-05 14:32:09 overwrite footer.css 
+2012-07-05 14:32:11 overwrite frontpage.css 
+2012-07-05 14:32:11     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:32:11 overwrite header.css 
+2012-07-05 14:32:11 identical InternetExplorer.css 
+2012-07-05 14:32:12 overwrite kamp.css 
+2012-07-05 14:32:13 overwrite kamppages.css 
+2012-07-05 14:32:13 identical slideshow.css 
+2012-07-05 14:32:14 overwrite style.css 
+2012-07-05 14:32:15 overwrite taxonomy.css 
+2012-07-05 14:42:08     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:42:08 overwrite header.css 
+2012-07-05 14:42:09     error src/style.sass (Line 102 of src/_header.sass: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:42:09 overwrite style.css 
+2012-07-05 14:44:41     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:44:41 identical header.css 
+2012-07-05 14:44:42     error src/style.sass (Line 102 of src/_header.sass: The line was indented 2 levels deeper than the previous line.)
+2012-07-05 14:44:42 overwrite style.css 
+2012-07-05 14:45:19     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:45:19 identical header.css 
+2012-07-05 14:45:19     error src/style.sass (Line 103 of src/_header.sass: Invalid CSS after "border:": expected pseudoclass or pseudoelement, was "1px solid #ff0000")
+2012-07-05 14:45:19 overwrite style.css 
+2012-07-05 14:46:23     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:46:23 identical header.css 
+2012-07-05 14:46:24 overwrite style.css 
+2012-07-05 14:46:49     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:46:49 identical header.css 
+2012-07-05 14:46:49     error src/style.sass (Line 102 of src/_header.sass: Inconsistent indentation: 3 spaces were used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:46:49 overwrite style.css 
+2012-07-05 14:47:20     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:47:20 identical header.css 
+2012-07-05 14:47:21 overwrite style.css 
+2012-07-05 14:48:10     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:48:10 identical header.css 
+2012-07-05 14:48:11 overwrite style.css 
+2012-07-05 14:50:23     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:50:23 identical header.css 
+2012-07-05 14:50:24 overwrite style.css 
+2012-07-05 14:51:20     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:51:20 identical header.css 
+2012-07-05 14:51:21     error src/style.sass (Line 102 of src/_header.sass: Colors must have either three or six digits: '#ff0000000')
+2012-07-05 14:51:21 overwrite style.css 
+2012-07-05 14:52:07     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:52:07 identical header.css 
+2012-07-05 14:52:08 overwrite style.css 
+2012-07-05 14:52:28     error src/header.sass (Line 103: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.)
+2012-07-05 14:52:28 identical header.css 
+2012-07-05 14:52:29 overwrite style.css 
+2012-07-05 14:54:53 overwrite style.css 
+2012-07-05 14:55:23 overwrite style.css 
