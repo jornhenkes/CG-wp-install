@@ -32,8 +32,8 @@ $link = get_bloginfo( 'url' ) . '/leeftijden/' . $term->slug . '/';
           	<?php while (have_posts()) : the_post(); ?>
       	        <?php
     				$main_kampkleur = null; $leeftijd = null;
-    			    $main_kampkleur = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_1_numInSet_0', true);
-    			    $leeftijd = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_5_numInSet_0', true);
+    			    $main_kampkleur = get_post_meta($post->ID, 'info_hoofdkleur', true);
+    			    $leeftijd = get_post_meta($post->ID, 'info_leeftijd', true);
     			?>
     	        <a href="<?php echo get_permalink(); ?>">
         	        <div class="category">

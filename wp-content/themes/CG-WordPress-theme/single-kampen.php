@@ -10,43 +10,38 @@ get_header();
 if (have_posts()) : while (have_posts()) : the_post(); ?>
 <meta property="og:image" content=""/>
 <?php
-    $main_kampkleur = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_1_numInSet_0', true);
-    $secons_main_kampkleur = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_11_numInSet_0', true);
-    $sec_kampkleur = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_10_numInSet_0', true);
-    //kampprijzen
-    $prijs = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_2_numInSet_0', true);
-    $prijs1 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_12_numInSet_0', true);
-    $prijs2 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_13_numInSet_0', true);
-    $prijs3 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_14_numInSet_0', true);
-    
-    $datum = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_3_numInSet_0', true);
-    $locatie = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_6_numInSet_0', true);
-    $priester = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_7_numInSet_0', true);
-    $leeftijd = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_5_numInSet_0', true);
+    $main_kampkleur = get_post_meta($post->ID, 'info_hoofdkleur', true);
+    $secons_main_kampkleur = get_post_meta($post->ID, 'info_tweede_kampkleur', true);
+    $sec_kampkleur = get_post_meta($post->ID, 'info_accentkleur', true);
+    $prijzen = $wpdb->get_results("
+        SELECT * FROM $wpdb->postmeta WHERE post_id = $post->ID
+        AND meta_key = 'info_kampprijs'
+        ORDER by meta_id ASC
+        ");    
+    $datum = get_post_meta($post->ID, 'info_kampdata', true);
+    $locatie = get_post_meta($post->ID, 'info_locatie', true);
+    $priester = get_post_meta($post->ID, 'info_priester', true);
+    $leeftijd = get_post_meta($post->ID, 'info_leeftijd', true);
     $tekst_uitgelicht = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_9_numInSet_0', true);
     // Featured content
-    $featured_title = get_post_meta($post->ID, '_simple_fields_fieldGroupID_2_fieldID_1_numInSet_0', true);
-    $featured_content = get_post_meta($post->ID, '_simple_fields_fieldGroupID_2_fieldID_2_numInSet_0', true);
-    $featured_images = get_post_meta($post->ID, '_simple_fields_fieldGroupID_2_fieldID_3_numInSet_0', true);
+    $featured_title = get_post_meta($post->ID, 'uitgelicht_titel', true);
+    $featured_content = get_post_meta($post->ID, 'uitgelicht_inhoud', true);
+    $featured_images = get_post_meta($post->ID, 'uitgelicht_afbeelding', true);
     // Extra content
-    $extra_content_title_1 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_3_fieldID_1_numInSet_0', true);
-    $extra_content_1 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_3_fieldID_2_numInSet_0', true);
-    $extra_content_title_2 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_3_fieldID_3_numInSet_0', true);
-    $extra_content_2 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_3_fieldID_4_numInSet_0', true);
-    $extra_content_title_3 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_3_fieldID_5_numInSet_0', true);
-    $extra_content_3 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_3_fieldID_6_numInSet_0', true);
+    $extra_content_title_1 = get_post_meta($post->ID, 'tv_titel_links', true);
+    $extra_content_1 = get_post_meta($post->ID, 'tv_tekstveld_links', true);
+    $extra_content_title_2 = get_post_meta($post->ID, 'tv_titel_midden', true);
+    $extra_content_2 = get_post_meta($post->ID, 'tv_tekstveld_midden', true);
+    $extra_content_title_3 = get_post_meta($post->ID, 'tv_titel_rechts', true);
+    $extra_content_3 = get_post_meta($post->ID, 'tv_tekstveld_rechts', true);
     // custom kamplogo
-    $custom_logo = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_15_numInSet_0', true);
+    $custom_logo = get_post_meta($post->ID, 'info_kamplogo', true);
     
-    $extra_mededeling = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_17_numInSet_0', true);
-   	$aanmeld_button = simple_fields_get_post_value(get_the_id(), array(1, 16), true);
+    $extra_mededeling = get_post_meta($post->ID, 'info_mededeling', true);
+   	$aanmeld_button = get_post_meta($post->ID, 'info_aanmeldbutton', true);
     
-    $aanmeld_parameter = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_18_numInSet_0', true);
-    
-    $downloadlink_1 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_19_numInSet_0', true);
-    $downloadlink_2 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_20_numInSet_0', true);
-    $downloadlink_3 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_21_numInSet_0', true);
-    $downloadlink_4 = get_post_meta($post->ID, '_simple_fields_fieldGroupID_1_fieldID_22_numInSet_0', true);
+    $aanmeld_parameter = get_post_meta($post->ID, 'info_parameter_voor_aanmeldformulier', true);
+    $downloadlink = get_post_custom_values('info_downloadlink');
     
 ?>
 <?php echo wp_get_attachment_image("full" ); ?>
@@ -109,34 +104,22 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             <ul class="meta_content" style="color: #<?php echo $sec_kampkleur ?>">
                 <li>&gt; <?php echo $datum ?></li>
                 <li>&gt; <?php echo $leeftijd ?></li>
-                <li>&gt; <?php echo $prijs ?></li>
-                <?php if ( strlen( $prijs1 ) > 0 ) : ?>
-                	<li>&gt; <?php echo $prijs1 ?></li>
-               	<?php endif; ?>
-                <?php if ( strlen( $prijs2 ) > 0 ) : ?>
-                	<li>&gt; <?php echo $prijs2 ?></li>
-               	<?php endif; ?>
-                <?php if ( strlen( $prijs3 ) > 0 ) : ?>
-                	<li>&gt; <?php echo $prijs3 ?></li>
-               	<?php endif; ?>
+               <?php
+               if (isset($prijzen)) {
+               foreach( $prijzen as $prijs ) {
+                echo '<li>&gt; ' . $prijs->meta_value . '</li>'; 
+                 } } ?>
                 <li>&gt; Priester: <?php echo $priester ?></li>
-                <?php if ( !empty($downloadlink_1) ): ?>
-              	<li>&gt; <?php echo wp_get_attachment_link( $downloadlink_1, '' );?></li>
-               	<?php endif; ?> 
-                <?php if ( !empty($downloadlink_2) ): ?>
-              	<li>&gt; <?php echo wp_get_attachment_link( $downloadlink_2, '' );?></li>
-               	<?php endif; ?> 
-                <?php if ( !empty($downloadlink_3) ): ?>
-              	<li>&gt; <?php echo wp_get_attachment_link( $downloadlink_3, '' );?></li>
-               	<?php endif; ?> 
-                <?php if ( !empty($downloadlink_4) ): ?>
-              	<li>&gt; <?php echo wp_get_attachment_link( $downloadlink_4, '' );?></li>
-               	<?php endif; ?> 
-
-
+                
+               <?php
+               if (isset($downloadlink)) {
+               foreach( $downloadlink as $link ) {
+                echo '<li>&gt; ' . wp_get_attachment_link( $link, '' ) . '</li>'; 
+                 }
+                    };?>
             </ul>
          </div>
-         <?php if ($aanmeld_button == 'Aanmeldbutton zichtbaar') : ?>
+         <?php if ($aanmeld_button == 1) : ?>
              <a href="<?php echo $aanmeld_parameter; ?>" title="Aanmelden">
                  <div class="sidebar_box" id="aanmelden_button">
                       Aanmelden
